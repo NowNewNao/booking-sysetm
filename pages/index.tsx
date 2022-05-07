@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import axios from 'axios';
 import { Button } from '@chakra-ui/react';
+import { AddIcon } from '@chakra-ui/icons';
 
 const Home: NextPage = () => {
     const addEvent = async () => {
@@ -9,8 +10,15 @@ const Home: NextPage = () => {
 
     return (
         <div>
-            <Button colorScheme="blue" onClick={() => addEvent()}>
-                Insert User
+            <Button
+                leftIcon={<AddIcon />}
+                colorScheme="teal"
+                variant="solid"
+                onClick={() => {
+                    addEvent();
+                }}
+            >
+                New Event
             </Button>
         </div>
     );
