@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { Heading } from '@chakra-ui/react';
 
 const Home: NextPage = () => {
   return (
@@ -12,9 +13,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1 >
+        <Heading color="red">
           Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        </Heading>
 
         <p >
           Get started by editing{" "}
