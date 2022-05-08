@@ -34,5 +34,9 @@ export default async function handler(
         await docRef.set(insertData);
     }
 
+    if (req.method === 'GET') {
+        await db.collection(COLLECTION_NAME).get();
+    }
+
     res.status(200);
 }

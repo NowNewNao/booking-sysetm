@@ -1,11 +1,15 @@
 import type { NextPage } from 'next';
 import axios from 'axios';
 import { Button } from '@chakra-ui/react';
-import { AddIcon } from '@chakra-ui/icons';
+import { AddIcon, RepeatIcon } from '@chakra-ui/icons';
 
 const Home: NextPage = () => {
     const addEvent = async () => {
         await axios.post('/api/event');
+    };
+
+    const getEvent = async () => {
+        await axios.get('/api/event');
     };
 
     return (
@@ -19,6 +23,17 @@ const Home: NextPage = () => {
                 }}
             >
                 New Event
+            </Button>
+
+            <Button
+                leftIcon={<RepeatIcon />}
+                colorScheme="orange"
+                variant="solid"
+                onClick={() => {
+                    getEvent();
+                }}
+            >
+                Display Registered Events
             </Button>
         </div>
     );
