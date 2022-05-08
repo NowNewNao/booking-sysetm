@@ -38,5 +38,9 @@ export default async function handler(
         await db.collection(COLLECTION_NAME).get();
     }
 
+    if (req.method === 'DELETE') {
+        await db.collection(COLLECTION_NAME).doc(targetDoc).delete();
+    }
+
     res.status(200);
 }
